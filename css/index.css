@@ -1,0 +1,272 @@
+/*CSS RESET*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+:root {
+    --quicksand: 'Quicksand', sans-serif;
+
+    --padding: 20px;
+    --border: 1px solid rgb(226, 226, 226);
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+/*DIVS*/
+
+.flex {
+    display: flex;
+}
+
+.wrapper {
+    flex-direction: column;
+}
+
+.container {
+    flex-direction: row;
+}
+
+#main-wrapper {
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    font-family: var(--quicksand);
+}
+
+section {
+    box-sizing: border-box;
+    overflow: hidden;
+    align-items: center;
+    padding: var(--padding);
+    width: 100%;
+    max-width: 1100px;
+}
+
+/*NAV*/
+
+nav {
+    box-sizing: border-box;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    justify-content: center;
+    padding: var(--padding);
+    width: 100%;
+    border-bottom: var(--border);
+    background: #fff;
+    font-family: var(--quicksand);
+    font-size: 1.6rem;
+    font-weight: 800;
+    font-variant: small-caps;
+    color: rgb(53, 53, 53);
+}
+
+/*BOOK INFO*/
+
+#book-info {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 60px;
+}
+
+#book-info > span {
+    z-index: 6;
+    padding: var(--padding);
+    max-width: 500px;
+    background: rgba(144,225,152, 0.8);
+    line-height: 2rem;
+    text-indent: 2rem;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+#book {
+    position: relative;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+    max-width: 300px;
+
+}
+
+#book-cover {
+    z-index: 5;
+    width: 80%;
+}
+
+#book::before, #book::after {
+    content: '';
+    position: absolute;
+}
+
+#book::before {
+    top: -2%;
+    left: 0;
+    height: 65%;
+    width: 55%;
+    background: rgba(181,231,243, 0.7);
+}
+
+#book::after {
+    bottom: -10%;
+    left: 50%;
+    height: 75%;
+    width: 60%;
+    background: rgba(255,203,219, 0.6);
+}
+
+#book-info > a {
+    position: absolute;
+    bottom: 20px;
+    margin: 0 auto;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: rgb(27, 221, 163);
+}
+
+#book-info > a::after {
+    content: '';
+    position: absolute;
+    left: 100%;
+    bottom: 0;
+    height: 0.8rem;
+    width: 0.8rem;
+    border: solid;
+    border-width: 3px 3px 0 0;
+    border-radius: 0 3px 0 0;
+    transform: rotate(45deg);
+    transition: 500ms;
+}
+
+#book-info > a:hover::after {
+    transform: rotate(45deg) translate(20px, -20px);
+}
+
+/*PAYMENT*/
+
+#payment-form {
+    flex-direction: column;
+    width: 100%;
+    max-width: 500px;
+}
+
+#payment-form > * {
+    margin-bottom: var(--padding);
+}
+
+#payment-form > input, #payment-form > select, #payment-form > #card-element {
+    padding: 10px;
+    border: var(--border);
+    border-radius: 3px;
+}
+
+#payment-form > button {
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    background: rgb(58, 84, 170);
+    font-family: verdana;
+    font-size: 1.25rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+/*CHECKOUT*/
+
+#checkout {
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+}
+
+#checkout > h2 {
+    font-size: 1.75rem;
+    font-weight: 500;
+}
+
+#checkout > * {
+    margin-bottom: var(--padding);
+}
+
+#checkout button {
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    background: rgb(58, 84, 170);
+    font-family: verdana;
+    font-size: 1.1rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+#checkout > form {
+    margin-top: auto;
+}
+
+/*SUCCESS*/
+
+#success > span {
+    text-align: center;
+}
+
+#success > #book {
+    margin: auto 0;
+}
+
+
+@media only screen and (min-width: 600px) {
+    #book-info {
+        padding-bottom: 100px;
+    }
+}
